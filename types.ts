@@ -3,16 +3,6 @@ export interface NavItem {
   href: string;
 }
 
-export interface Project {
-  id: string;
-  title: string;
-  description: string;
-  tags: string[];
-  imageUrl: string;
-  link?: string;
-  year: string;
-}
-
 export interface Experience {
   id: string;
   role: string;
@@ -25,4 +15,13 @@ export interface SocialLink {
   platform: string;
   url: string;
   icon: React.ReactNode;
+}
+
+export interface Project {
+  title: string;
+  description: string;
+  imageUrl: string;
+  tags: string[];
+  link?: string;
+  year: string;
 }

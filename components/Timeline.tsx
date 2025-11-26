@@ -1,28 +1,29 @@
 import React from 'react';
-import { Calendar } from 'lucide-react';
+import { Calendar, BookOpen, Lightbulb, Search } from 'lucide-react';
 import { Experience } from '../types';
 
+// Using Experience type for general timeline events
 const experiences: Experience[] = [
   {
     id: '1',
-    role: '前端开发者',
-    company: '自由职业 / 个人项目',
+    role: 'AI 探索者',
+    company: 'Current Focus',
     period: '2023 - 至今',
-    description: '专注于 Web 前端技术栈的学习与实践，维护个人博客与开源小工具，探索 React 生态系统。',
+    description: '被生成式 AI 的爆发深深吸引，开始系统了解 LLM、RAG 以及 AI 绘画技术。虽然不是科班出身，但正在努力通过开源社区学习相关知识。',
   },
   {
     id: '2',
-    role: '计算机专业学生',
-    company: '大学期间',
-    period: '2019 - 2023',
-    description: '在校期间系统学习了计算机基础，并利用课余时间自学前端开发，参与了一些校园社团网站的维护。',
+    role: '技术尝鲜期',
+    company: 'Self Learning',
+    period: '2021 - 2023',
+    description: '出于好奇，尝试自学 Python 和 Web 基础。虽然写出的代码很稚嫩，且没有完成完整的项目，但这段经历让我学会了如何与机器对话。',
   },
   {
     id: '3',
-    role: 'ACG 爱好者',
-    company: '兴趣使然',
-    period: '2018 - 2019',
-    description: '出于对动漫的热爱，开始尝试修改博客主题，这是我接触代码的起点。',
+    role: '兴趣萌芽',
+    company: 'Origin',
+    period: 'Before 2021',
+    description: '作为一名普通的 ACG 爱好者，对计算机世界充满向往。喜欢折腾各种软件和系统，这是我探索技术的起点。',
   },
 ];
 
@@ -31,8 +32,8 @@ const Timeline: React.FC = () => {
     <section id="timeline" className="py-20 bg-slate-950">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">时间轨迹</h2>
-          <p className="text-slate-400">记录学习与成长的脚印</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">探索足迹</h2>
+          <p className="text-slate-400">非科班的学习与折腾记录</p>
         </div>
 
         <div className="relative">
@@ -52,14 +53,19 @@ const Timeline: React.FC = () => {
 
                 {/* Content Box */}
                 <div className="md:w-1/2 pl-8 md:pl-0 md:px-12">
-                  <div className={`bg-slate-900/40 p-6 rounded-2xl border border-white/5 hover:border-violet-500/30 transition-all hover:bg-slate-900/60 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
+                  <div className={`bg-slate-900/40 p-6 rounded-2xl border border-white/5 hover:border-violet-500/30 transition-all hover:bg-slate-900/60 group ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
                     <div className={`flex items-center gap-2 text-violet-400 text-sm font-mono mb-2 ${index % 2 === 0 ? 'justify-start' : 'md:justify-end'}`}>
                       <Calendar size={14} />
                       {exp.period}
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-1">{exp.role}</h3>
-                    <h4 className="text-slate-400 font-medium mb-3">{exp.company}</h4>
-                    <p className="text-slate-400 text-sm leading-relaxed">
+                    <div className={`flex items-center gap-2 mb-1 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                         <h3 className="text-xl font-bold text-white">{exp.role}</h3>
+                         {index === 0 ? <Search size={18} className="text-cyan-400"/> : 
+                          index === 1 ? <BookOpen size={18} className="text-violet-400"/> : 
+                          <Lightbulb size={18} className="text-amber-400"/>}
+                    </div>
+                    <h4 className="text-slate-500 font-medium mb-3 text-sm tracking-wider uppercase">{exp.company}</h4>
+                    <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors">
                       {exp.description}
                     </p>
                   </div>

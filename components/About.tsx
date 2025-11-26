@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Coffee, Gamepad2, Headphones } from 'lucide-react';
+import { Brain, Bot, Gamepad2, Rocket } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
@@ -13,23 +13,25 @@ const About: React.FC = () => {
               关于 AcgLine
             </h2>
             <p className="text-slate-400 leading-7 mb-6 text-lg">
-              你好！我是 AcgLine，一个普通的 Web 开发爱好者。
+              你好！我是 AcgLine。
               <br/><br/>
-              这里的 <b>"Acg"</b> 代表着我灵感的源泉——动画、漫画与游戏；
-              而 <b>"Line"</b> 则是连接这些幻想世界与现实技术的通道。
+              我并不是计算机专业的学生，也不是职业程序员。
+              但我坚信，技术不仅仅属于工程师，它属于每一个保持好奇心的人。
               <br/><br/>
-              我正在学习 React 和现代 Web 技术栈，努力构建更好看的界面。
-              不写代码的时候，我通常沉浸在开放世界游戏中，或者在合成器音乐中寻找新的节奏。
+              <b>"Acg"</b> 代表我的初心，<b>"Line"</b> 是我连接兴趣与技术的纽带。
+              目前，我将全部的精力投入到了 <b>人工智能 (AI)</b> 的探索中。从大语言模型（LLM）的原理学习，到 AI 绘画的实践，我在不断拓宽认知的边界。
+              <br/><br/>
+              虽然现在还没有拿得出手的项目，但我相信，每一次尝试都是通向未来的基石。
             </p>
             
             <div className="grid grid-cols-2 gap-4 mt-8">
               {[
-                { icon: <Code size={20} />, label: "Web Developer", color: "text-blue-400" },
-                { icon: <Gamepad2 size={20} />, label: "Hardcore Gamer", color: "text-purple-400" },
-                { icon: <Coffee size={20} />, label: "Coffee Addict", color: "text-amber-400" },
-                { icon: <Headphones size={20} />, label: "Audiophile", color: "text-pink-400" },
+                { icon: <Brain size={20} />, label: "AI Enthusiast", color: "text-blue-400" },
+                { icon: <Rocket size={20} />, label: "Non-CS Major", color: "text-purple-400" },
+                { icon: <Bot size={20} />, label: "Prompt Engineering", color: "text-amber-400" },
+                { icon: <Gamepad2 size={20} />, label: "Gamer", color: "text-pink-400" },
               ].map((item, idx) => (
-                <div key={idx} className="flex items-center gap-3 p-4 rounded-xl bg-slate-900/50 border border-slate-800">
+                <div key={idx} className="flex items-center gap-3 p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-violet-500/30 transition-colors">
                   <span className={item.color}>{item.icon}</span>
                   <span className="font-medium text-slate-300">{item.label}</span>
                 </div>
@@ -42,14 +44,17 @@ const About: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-tr from-violet-600 to-cyan-600 rounded-2xl rotate-3 opacity-20 group-hover:rotate-6 transition-transform duration-500"></div>
             <div className="absolute inset-0 bg-slate-800 rounded-2xl -rotate-3 border border-slate-700"></div>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-700 aspect-[4/3] bg-slate-900 flex items-center justify-center">
-               {/* Placeholder for Profile or Abstract Art */}
-               <img 
-                 src="https://picsum.photos/800/600?grayscale" 
-                 alt="Workspace" 
-                 className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 hover:scale-105"
-               />
+               {/* Abstract AI Representation */}
+               <div className="text-center p-8">
+                  <div className="w-24 h-24 mx-auto bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full blur-[40px] opacity-60 animate-pulse"></div>
+                  <div className="relative -mt-16 text-6xl">🤖</div>
+                  <p className="mt-6 text-slate-400 font-mono text-sm typing-effect">
+                    Learning...
+                  </p>
+               </div>
+               
                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-950 to-transparent">
-                  <p className="text-white font-mono text-sm">System.init('AcgLine_Core');</p>
+                  <p className="text-white font-mono text-sm">Status: Exploring_New_Worlds...</p>
                </div>
             </div>
           </div>
